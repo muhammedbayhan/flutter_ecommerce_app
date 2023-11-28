@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_ecommerce_app/routes/routes.dart';
+import 'package:get/route_manager.dart';
 
 class AuthService {
 
@@ -13,6 +15,7 @@ try {
   final UserCredential userCredential= await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
 if (userCredential.user!=null) {
   print("Login successful");
+  Get.offAndToNamed(AppRoutes.home);
 }
 } on FirebaseAuthException catch (e) {
   print("----------SIGN IN ERROR----------")  ;
@@ -34,7 +37,7 @@ try {
 if (userCredential.user!=null) {
   _registerUser(email: email, password: password, uid: userCredential.user!.uid);
     print("Register successful");
-
+ Get.offAndToNamed(AppRoutes.home);
 }
 
 } on FirebaseAuthException catch (e) {

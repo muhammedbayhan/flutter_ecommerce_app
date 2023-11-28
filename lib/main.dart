@@ -1,19 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/firebase_options.dart';
-import 'package:flutter_ecommerce_app/views/login_view.dart';
-import 'package:flutter_ecommerce_app/views/register_view.dart';
+import 'package:flutter_ecommerce_app/routes/routes.dart';
 import 'package:flutter_ecommerce_app/views/welcome_view.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -22,16 +21,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Ecommerce App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-    fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.poppins().fontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: false ,
+        useMaterial3: false,
       ),
-      home: WelcomeView(),
+      getPages: AppRoutes.routes,
     );
   }
 }
-

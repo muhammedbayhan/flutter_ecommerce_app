@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/constants/global_colors.dart';
 import 'package:flutter_ecommerce_app/constants/page_padding.dart';
+import 'package:flutter_ecommerce_app/routes/routes.dart';
+import 'package:get/route_manager.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -37,14 +39,14 @@ class WelcomeView extends StatelessWidget {
             [
                   ElevatedButton(
                 onPressed: () {
-                
+                Get.toNamed(AppRoutes.login);
                 },
                 child: Text("Sign In"),
                 style: ElevatedButton.styleFrom(backgroundColor: GlobalColors.black,shape: StadiumBorder()),
               ),
                   ElevatedButton(
                 onPressed: () {
-                 
+              Get.toNamed(AppRoutes.register);
                 },
                 child: Text("Sign Up"),
                 style: ElevatedButton.styleFrom(elevation: 0,backgroundColor: GlobalColors.transparent,shape: StadiumBorder(side: BorderSide(color: GlobalColors.white,width: 2))),

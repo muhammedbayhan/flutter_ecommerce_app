@@ -11,6 +11,7 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+
       body: Padding(
         padding: PagePadding.pagePadding,
         child: Column(
