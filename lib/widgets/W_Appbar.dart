@@ -20,7 +20,9 @@ class W_Appbar extends StatelessWidget implements PreferredSizeWidget {
        Column(
         mainAxisAlignment: MainAxisAlignment.center,
          children: [
-           CircleAvatar(child: Text(AuthService().firebaseAuth.currentUser!.email![0],style: TextStyle(color: Colors.white),),backgroundColor: Theme.of(context).colorScheme.primary,)
+           CircleAvatar(
+            radius: 16,
+            child: Text(AuthService().firebaseAuth.currentUser!.email![0],style: TextStyle(color: Colors.white),),backgroundColor: Theme.of(context).colorScheme.primary,)
          ],
        ),
     

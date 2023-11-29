@@ -17,7 +17,7 @@ class BaseScaffoldView extends StatefulWidget {
 class _BaseScaffoldViewState extends State<BaseScaffoldView> {
   List<Widget> _buildScreens() {
     return [
-      const HomeView(),
+       HomeView(),
       const FavoritesView(),
       const CartView(),
       const ProfileView(),

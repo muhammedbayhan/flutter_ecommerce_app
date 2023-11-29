@@ -9,20 +9,23 @@ class W_Textfield extends StatelessWidget {
   final TextEditingController controller;
   bool obscureText;
   String hintText;
-
+ 
+  
   @override
   Widget build(BuildContext context) {
     return TextField(
+      
       obscureText: obscureText,
       controller: controller,
       decoration:  InputDecoration(
+       
         hintText: hintText,
          hintStyle: Theme.of(context).textTheme.bodySmall!.copyWith(color: Theme.of(context).colorScheme.primary),
                   isDense: true,                       
 
           border: const OutlineInputBorder(
               borderRadius:
-                  BorderRadius.all(Radius.circular(30)))),
+                  BorderRadius.all(Radius.circular(10)))),
     );
   }
 }

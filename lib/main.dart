@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/binding/home_view_binding.dart';
 import 'package:flutter_ecommerce_app/firebase_options.dart';
 import 'package:flutter_ecommerce_app/routes/routes.dart';
-import 'package:flutter_ecommerce_app/views/welcome_view.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: HomeViewBindings(),
       title: 'Flutter Ecommerce App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
