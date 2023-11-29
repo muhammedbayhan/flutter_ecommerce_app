@@ -18,8 +18,8 @@ class _BaseScaffoldViewState extends State<BaseScaffoldView> {
   List<Widget> _buildScreens() {
     return [
        HomeView(),
-      const FavoritesView(),
-      const CartView(),
+       FavoritesView(),
+       CartView(),
       const ProfileView(),
     ];
   }

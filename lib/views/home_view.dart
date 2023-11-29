@@ -20,6 +20,7 @@ class _HomeViewState extends State<HomeView> {
   TextEditingController _searchController = TextEditingController();
 
   final HomeViewModel _homeViewModel = Get.put(HomeViewModel());
+  final List categories=["smartphones","laptops","fragrances","skincare","groceries"];
 
   @override
   Widget build(BuildContext context) {
@@ -68,10 +69,10 @@ class _HomeViewState extends State<HomeView> {
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: _homeViewModel.products!.length,
+                itemCount: categories.length,
                 itemBuilder: (BuildContext context, int index) =>
                     W_CategoryCard(
-                        categoryName: _homeViewModel.products![index].category!),
+                        categoryName: categories[index]),
               ),
             ),
           ),
@@ -93,6 +94,7 @@ class _HomeViewState extends State<HomeView> {
                     return ProductCard(
                       imgUrl: _homeViewModel.products![index].thumbnail!,
                       productTitle: _homeViewModel.products![index].title!,
+                      brand:  _homeViewModel.products![index].brand!,
                       price: _homeViewModel.products![index].price.toString(),
                       index: index,
                     );

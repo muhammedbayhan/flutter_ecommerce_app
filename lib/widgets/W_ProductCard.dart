@@ -5,11 +5,12 @@ import 'package:get/get.dart';
 
 class ProductCard extends StatelessWidget {
    ProductCard({
-    super.key,required this.imgUrl,required this.productTitle,required this.price,required this.index
+    super.key,required this.imgUrl,required this.productTitle,required this.price,required this.index,required this.brand
   });
       final HomeViewModel _homeViewModel = Get.put(HomeViewModel());
 String imgUrl;
 String productTitle;
+String brand;
 String price;
 int index;
   @override
@@ -32,7 +33,18 @@ int index;
             ),
           ),
         ),
-        Text(productTitle),
+
+     RichText(
+    maxLines: 1,
+    overflow: TextOverflow.ellipsis, // TextOverflow.clip // TextOverflow.fade
+    text: TextSpan(
+        text: '$brand ',
+        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+        children: <TextSpan>[
+            TextSpan(text: '$productTitle', style: DefaultTextStyle.of(context).style),
+        ],
+    ),
+),
         Text(
           "$price\$",
           style: Theme.of(context)
